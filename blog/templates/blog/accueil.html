@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<!--<head>
+	<title>Mon Premier Blog</title>--> <!--donne le titre de la page-->
+	<!--<style type="text/css">
+		h1{color:red;}
+		p{background-color:blue;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="{% static "blog/css/bootstrap.min.css" %}">
+</head>
+<body>
+<h1 class="text-center alert alert-primary">Bienvenue sur mon Blog</h1>-->
+<!--<p class="button button-success">A travers le Djangogirls j'apprends de nouvelles choses et je me fais de nouvelles connaissances</p>-->
+<!--<button class="btn btn-danger">click</button>
+</body>-->
+ <head>
+ 	<link rel="stylesheet" type="text/css" href="{% static 'blog/css/bootstrap.min.css' %}">
+        <title>Django Girls blog</title>
+    </head>
+    <body>
+        <div class="container-fluid text-center">
+            <h1 class="alert alert-primary"><a href="">Django Girls Blog</a></h1>
+        </div>
+        <div>
+
+        <div class="container">
+            {%for post in tous_les_postes %}
+            <div>
+             <!-- {{ post.author }}<br>-->
+              <h2 style="color:yellow"> {{ post.title }} </h2>
+              <p class="text-justify"> {{ post.text }} </p><br>
+              <h6 class=text-right style="color:red; font-style:italic;"> publié le {{ post.published_date }} </h6><br>
+            <div>
+            {% endfor %}
+        </div>
+
+        </div>
+
+        <div>
+            
+        </div>
+    </body>
+</html>
